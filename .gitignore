@@ -1,0 +1,10 @@
+# .gitignore
+
+# Node dependencies
+node_modules/
+
+# Build output (if any)
+dist/
+
+# macOS system files (safe to add)
+.DS_Store

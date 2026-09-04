@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+/* Custom Styles for Advanced Weather App */
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  @apply px-4 py-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 font-medium;
+}
+
+.nav-btn.active {
+  @apply text-white bg-white/20;
+}
+
+/* Section Visibility */
+.section {
+  @apply hidden;
+}
+
+.section.active {
+  @apply block;
+}
+
+/* Toggle Checkbox Styling */
+.toggle-checkbox {
+  @apply relative w-12 h-6 bg-gray-600 rounded-full appearance-none cursor-pointer transition-colors duration-200;
+}
+
+.toggle-checkbox:checked {
+  @apply bg-blue-500;
+}
+
+.toggle-checkbox::before {
+  content: '';
+  @apply absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-200;
+}
+
+.toggle-checkbox:checked::before {
+  @apply transform translate-x-6;
+}
+
+/* Weather Cards */
+.weather-card {
+  @apply bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-200 cursor-pointer;
+}
+
+.weather-card:hover {
+  @apply transform scale-105;
+}
+
+/* Hourly Forecast Items */
+.hourly-item {
+  @apply flex-shrink-0 bg-white/10 backdrop-blur-md rounded-xl p-4 text-center border border-white/20 min-w-[100px];
+}
+
+/* Daily Forecast Items */
+.daily-item {
+  @apply flex items-center justify-between p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors duration-200;
+}
+
+/* Alert Styles */
+.alert-severe {
+  @apply bg-red-500/20 border-red-500/50 text-red-100;
+}
+
+.alert-warning {
+  @apply bg-yellow-500/20 border-yellow-500/50 text-yellow-100;
+}
+
+.alert-info {
+  @apply bg-blue-500/20 border-blue-500/50 text-blue-100;
+}
+
+/* AQI Color Classes */
+.aqi-good {
+  @apply bg-green-500;
+}
+
+.aqi-moderate {
+  @apply bg-yellow-500;
+}
+
+.aqi-unhealthy-sensitive {
+  @apply bg-orange-500;
+}
+
+.aqi-unhealthy {
+  @apply bg-red-500;
+}
+
+.aqi-very-unhealthy {
+  @apply bg-purple-500;
+}
+
+.aqi-hazardous {
+  @apply bg-red-800;
+}
+
+/* Loading Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Dark Theme */
+.dark {
+  @apply bg-gradient-to-br from-gray-900 via-slate-900 to-black;
+}
+
+.dark .bg-white\/10 {
+  @apply bg-gray-800/50;
+}
+
+.dark .border-white\/20 {
+  @apply border-gray-700/50;
+}
+
+.dark .text-white {
+  @apply text-gray-100;
+}
+
+.dark .text-gray-300 {
+  @apply text-gray-400;
+}
+
+.dark .text-gray-400 {
+  @apply text-gray-500;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/30;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav-btn {
+    @apply px-3 py-1 text-sm;
+  }
+
+  .hourly-item {
+    @apply min-w-[80px] p-3;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Weather Icon Animations */
+.weather-icon-animate {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Radio Button Styling */
+input[type="radio"] {
+  @apply appearance-none w-4 h-4 border-2 border-white/30 rounded-full checked:border-blue-500 checked:bg-blue-500 transition-colors duration-200;
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  @apply block w-2 h-2 bg-white rounded-full m-auto mt-0.5;
+}
+
+/* Search Suggestions */
+.suggestion-item {
+  @apply px-4 py-3 hover:bg-gray-100 cursor-pointer transition-colors duration-150 border-b border-gray-200 last:border-b-0;
+}
+
+.suggestion-item:hover {
+  @apply bg-gray-50;
+}
+
+/* Map Container */
+.leaflet-container {
+  @apply rounded-xl;
+}
+
+/* Chart Container */
+canvas {
+  @apply rounded-lg;
+}
